@@ -1,0 +1,11 @@
+{
+  "name": "roastbox",
+  "version": "1.0.0",
+  "private": true,
+  "description": "roastbox hugo demo",
+  "dependencies": {
+    "@ritterim/platform-ui": "^1.2.9"
+  },
+  "devDependencies": {},
+  "scripts": {}
+}

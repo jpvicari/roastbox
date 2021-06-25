@@ -1,0 +1,22 @@
+{
+  "locations": [
+    {
+      "name": "Broad Ripple Park",
+      "address": "3563 W. Park Ave.",
+      "city": "Lemoyne",
+      "state": "PA",
+      "zip": "17025",
+      "phone": "717-123-4567",
+      "image": "/images/window-signage.jpg"
+    },
+    {
+      "name": "18th Street Station",
+      "address": "168 18th St.",
+      "city": "Lancaster",
+      "state": "PA",
+      "zip": "17601",
+      "phone": "717-765-4321",
+      "image": "/images/building.jpg"
+    }
+  ]
+}

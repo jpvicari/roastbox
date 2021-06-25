@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{ partial "site/banner" . }}
+  <main class="block-container flex--justify-center">
+    <div class="block tablet-up-8">
+      <div class="text--size-lg border-b border--color-lighter mb-4">
+        {{ .Content }}
+      </div>
+      {{ partial "site/featured" . }}
+    </div>
+  </main>
+{{ end }}

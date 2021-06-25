@@ -1,0 +1,22 @@
+<div class="block-container blocks py-2 px-5 tablet-up-2">
+  {{ range .Site.Data.locations.locations }}
+    <div class="block">
+      <h3>{{ .name }}</h3>
+      <div class="block-container">
+        <div class="block tablet-up-4">
+          <p>
+            {{ .address }}<br/>
+            {{ .city }}, {{ .state }} {{ .zip }}<br/>
+            {{ .phone }}
+          </p>
+          <div>
+            <i class="pi-map text--size-lg cursor"></i>
+          </div>
+        </div>
+        <div class="block tablet-up-8 px-3">
+          <img class="w-100" src="{{ .image }}" alt="{{ .name }}" />
+        </div>
+      </div>
+    </div>
+  {{ end }}
+</div>

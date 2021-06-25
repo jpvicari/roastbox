@@ -1,0 +1,17 @@
+baseURL: /
+languageCode: en
+title: RoastBox Coffee Co.
+
+pluralizeListTitles: false
+
+menu:
+  main:
+  - name: About
+    url: /about/
+    weight: -110
+  - name: Coffee
+    url: /coffee/
+    weight: -100
+  - name: Locations
+    url: /locations/
+    weight: -90

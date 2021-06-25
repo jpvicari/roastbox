@@ -1,0 +1,20 @@
+{{ $currentPage := . }}
+<div class="block-container flex--justify-center mb-3 py-3 border-b border--color-light-mid background-lighter">
+  <div class="block tablet-up-8">
+    <header class="site-menu-wrapper">
+      <a href="/" class="site-logo">
+        <img src="/images/rbc_fb2.jpg" alt="RoastBox Coffee" />
+      </a>
+      <nav class="site-menu">
+        {{ range .Site.Menus.main }}
+          <a 
+            href="{{ .URL }}" 
+            class="site-menu__item{{if or (eq $currentPage.RelPermalink .URL) ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}">
+            {{ .Name }}
+          </a>
+        {{ end }}
+        <a href="#" class="site-menu__item"><i class="pi-star"></i></a>
+      </nav>
+    </header>
+  </div>
+</div>

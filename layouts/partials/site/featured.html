@@ -1,0 +1,27 @@
+<h3 class="flex mb-2">Featured Coffee <i class="pi-asterisk mx-2"></i></h3>
+<div class="block-container cards blocks p-3 mb-3 tablet-up-3">
+  {{ range where (where .Site.Pages "Section" "coffee" ) "Params.featured" "=" true }}
+      <div class="block">
+          <div class="card rounded-3">
+              {{ $resources := .Resources.ByType "image" }}
+              {{ if .Params.image }}
+                  {{ with .Params.image }}
+                      {{ $imageResource := $resources.GetMatch ( . ) }}
+                      {{ $resized := $imageResource.Fill "600x400 smart" }}
+                      <img class="card__image" src="{{ $resized.Permalink }}" alt="{{ $resized.Name }}" />
+                  {{ end }}
+              {{ end }}
+              <div class="card__content">
+                  <h3 class="text--size-md text--bold"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                  <p>{{ .Params.description }}</p>
+                  <div class="block-container flex--justify-end">
+                      <a href="{{ .Permalink }}" class="pill pill--split">
+                          <div class="pill__label"><i class="pi-credit-card-back text--green"></i></div>
+                          <div class="pill__content text--green text--bold text--size-sm">{{ .Params.price }}/lb.</div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  {{ end }}
+</div>

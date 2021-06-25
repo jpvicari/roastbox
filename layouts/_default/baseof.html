@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  {{ block "head" . }}
+    {{ partial "site/head" . }}
+  {{ end }}
+  <body class="flex flex--column">
+    {{ partial "site/nav" . }}
+    {{ block "main" . }}
+      <main class="block-container flex--justify-center flex--grow">
+        <div class="block tablet-up-8">
+          {{ .Content }}
+        </div>
+      </main>
+    {{ end }}
+    {{ partial "site/footer" . }}
+
+    {{ $options := (dict "includePaths" (slice "node_modules")) }}
+    {{ $style := resources.Get "js/main.js" | js.Build $options }}
+    <script src="{{ $style.Permalink | relURL }}"></script>
+  </body>
+</html>

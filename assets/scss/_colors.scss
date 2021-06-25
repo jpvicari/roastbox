@@ -1,0 +1,19 @@
+$brand-colors: (
+  'red': #de2c2c,
+  'green': green,
+  'dk-red': #731111
+);
+
+.border--color-red {
+  border-color: #de2c2c !important;
+}
+.button--red {
+  background: #de2c2c !important;
+  color: white;
+}
+
+@each $name, $color in $brand-colors {
+  .text--#{$name} {
+    color: #{$color} !important;
+  }
+}
